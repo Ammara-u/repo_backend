@@ -145,7 +145,7 @@ DATABASES={
     'default':{       
     'ENGINE': 'django.db.backends.mysql',
     'NAME': 'ammara_InventoryApp',
-    'HOST':'localhost',
+    'HOST':'102.223.187.41',
     'PORT':'3306',
     'USER': 'ammara_ammara',
     'PASSWORD':'ammara@1104'
