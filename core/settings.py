@@ -1,6 +1,7 @@
 
 from pathlib import Path
-
+import pymysql
+pymysql.install_as_MySQLdb()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -8,15 +9,20 @@ import dj_database_url
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-rc4x=v+g%ujjdt=^pxq79(_5^p_^g%vv9j0wi@to&+kd--t$7x'
+
+
+SECRET_KEY = 'django-insecure-ammara-cpanel-secret-key-change-this-1234567890abcdef'
+
+DEBUG = True
+
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 # ALLOWED_HOSTS = ['localhost','192.168.56.1','127.0.0.1']
 # ALLOWED_HOSTS = ["*"]
-ALLOWED_HOSTS = ["usingrender-x7yq.onrender.com", "localhost", "127.0.0.1", "seals-front-end-wh1f.vercel.app"]
+ALLOWED_HOSTS = ["usingrender-x7yq.onrender.com", "localhost", "127.0.0.1", "seals-front-end-wh1f.vercel.app","social-mauve-koala.102-223-187-41.cpanel.site"]
 
 # Application definition
 CORS_ALLOW_CREDENTIALS = True
@@ -39,7 +45,15 @@ INSTALLED_APPS = [
 # In settings.py - ONLY FOR TESTING
 CORS_ALLOW_ALL_ORIGINS = True
 
-CORS_ALLOW_METHODS = ['*']
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'PATCH',
+    'PUT',
+    'DELETE',
+    'OPTIONS',
+]
+
 
 CORS_ALLOW_HEADERS = [
     'content-type',
