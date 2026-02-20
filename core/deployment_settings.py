@@ -2,11 +2,19 @@ import os
 import dj_database_url
 from .settings import *
 
+from corsheaders.defaults import default_headers
 
+CORS_ALLOW_HEADERS = list(default_headers) + [
+    'x-requested-with',
+]
+
+# Ensure these are also set
+CORS_ALLOW_ALL_ORIGINS = True  
+CORS_ALLOW_CREDENTIALS = True
 ALLOWED_HOSTS = [os.environ.get('RENDER_EXTERNAL_HOSTNAME'), 'repo-backend-nlzr.onrender.com', 'localhost', '127.0.0.1']
 # ALLOWED_HOSTS = [os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
 # Fixed the 'G' to 'F' and added the missing 'get'
-CSRF_TRUSTED_ORIGINS = ['https://' + os.environ.get('RENDER_EXTERNAL_HOSTNAME')] 
+# CSRF_TRUSTED_ORIGINS = ['https://' + os.environ.get('RENDER_EXTERNAL_HOSTNAME')] 
 
 DEBUG = False
 # Fixed '.gte' to '.get'
